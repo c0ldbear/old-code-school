@@ -1,5 +1,17 @@
 #include <iostream>
 
+int Attack(int health, int damage)
+{
+    int result = health - damage;
+
+    if (result <= 0)
+    {
+        result = 0;
+    }
+
+    return result;
+}
+
 int main()
 {
 
@@ -11,19 +23,8 @@ int main()
     int enemyDamage = 4;
     bool enemyAlive = true;
 
-    playerHealth = playerHealth - enemyDamage;
-    if (playerHealth <= 0)
-    {
-        playerHealth = 0;
-        playerAlive = false;
-    }
-
-    enemyHealth = enemyHealth - playerDamage;
-    if (enemyHealth <= 0)
-    {
-        enemyHealth = 0;
-        enemyAlive = false;
-    }
+    playerHealth = Attack(playerHealth, enemyDamage);
+    enemyHealth = Attack(enemyHealth, playerDamage);
 
     return 0;
 }
