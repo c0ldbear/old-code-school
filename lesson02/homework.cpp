@@ -41,11 +41,32 @@ void TestIsLowercase()
 }
 
 // Write a function that makes a character uppercase ONLY IF it is lowercase
+char MakeUppercase(char character)
+{
+    if (IsLowercase(character))
+    {
+        return character - 32;
+    }
+
+    return character;
+}
+
+void TestMakeUppercase()
+{
+    std::cout << "a : " << MakeUppercase('a') << std::endl;
+    std::cout << "b : " << MakeUppercase('b') << std::endl;
+    std::cout << "z : " << MakeUppercase('z') << std::endl;
+    std::cout << "A : " << MakeUppercase('A') << std::endl;
+    std::cout << "Z : " << MakeUppercase('Z') << std::endl;
+
+}
+
 
 int main()
 {
     //TestCheckInt();
-    TestIsLowercase();
+    //TestIsLowercase();
+    TestMakeUppercase();
 
     return 0;
 }
