@@ -14,10 +14,5 @@ int add(int number_a, int number_b)
 {
     int result = number_a + number_b;
 
-    if (result > 10)
-    {
-        result += 1;
-    }
-
     return result;
 }
